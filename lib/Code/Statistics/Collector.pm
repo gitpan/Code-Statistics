@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Collector;
 BEGIN {
-  $Code::Statistics::Collector::VERSION = '1.102350';
+  $Code::Statistics::Collector::VERSION = '1.102351';
 }
 
 # ABSTRACT: collects statistics and dumps them to json
@@ -189,7 +189,7 @@ Code::Statistics::Collector - collects statistics and dumps them to json
 
 =head1 VERSION
 
-version 1.102350
+version 1.102351
 
 =head2 collect
     Locates files to collect statistics on, collects them and dumps them to

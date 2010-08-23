@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Target::Block;
 BEGIN {
-  $Code::Statistics::Target::Block::VERSION = '1.102350';
+  $Code::Statistics::Target::Block::VERSION = '1.102351';
 }
 
 # ABSTRACT: represents a block in perl code
@@ -28,7 +28,7 @@ Code::Statistics::Target::Block - represents a block in perl code
 
 =head1 VERSION
 
-version 1.102350
+version 1.102351
 
 =head2 find_targets
     Returns all PPI::Structure::Block elements found in the given file.

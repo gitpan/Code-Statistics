@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Metric::size;
 BEGIN {
-  $Code::Statistics::Metric::size::VERSION = '1.102350';
+  $Code::Statistics::Metric::size::VERSION = '1.102351';
 }
 
 # ABSTRACT: measures the byte size of a target
@@ -29,7 +29,7 @@ Code::Statistics::Metric::size - measures the byte size of a target
 
 =head1 VERSION
 
-version 1.102350
+version 1.102351
 
 =head2 measure
     Returns the byte size of the given target.

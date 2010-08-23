@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Target;
 BEGIN {
-  $Code::Statistics::Target::VERSION = '1.102350';
+  $Code::Statistics::Target::VERSION = '1.102351';
 }
 
 # ABSTRACT: base class for Code::Statistic targets
@@ -41,7 +41,7 @@ Code::Statistics::Target - base class for Code::Statistic targets
 
 =head1 VERSION
 
-version 1.102350
+version 1.102351
 
 =head2 find_targets
     Returns an arrayref to a list of targets found in the given file.

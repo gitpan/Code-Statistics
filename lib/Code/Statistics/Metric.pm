@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Metric;
 BEGIN {
-  $Code::Statistics::Metric::VERSION = '1.102350';
+  $Code::Statistics::Metric::VERSION = '1.102351';
 }
 
 # ABSTRACT: base class for Code::Statistic metrics
@@ -41,7 +41,7 @@ Code::Statistics::Metric - base class for Code::Statistic metrics
 
 =head1 VERSION
 
-version 1.102350
+version 1.102351
 
 =head2 measure
     Returns the metric of the given target.
