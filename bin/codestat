@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+package codestat;
+
+use Code::Statistics::App;
+
+local @ARGV = qw( commands ) if !@ARGV;    # make sure it prints the global options by default
+
+Code::Statistics::App->run;
