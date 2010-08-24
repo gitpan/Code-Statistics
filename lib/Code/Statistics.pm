@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics;
 BEGIN {
-  $Code::Statistics::VERSION = '1.102351';
+  $Code::Statistics::VERSION = '1.102360';
 }
 
 # ABSTRACT: collects and reports statistics on perl code
@@ -42,6 +42,7 @@ sub report {
     return Code::Statistics::Reporter->new( $self->_command_config )->report;
 }
 
+
 1;
 
 __END__
@@ -53,7 +54,7 @@ Code::Statistics - collects and reports statistics on perl code
 
 =head1 VERSION
 
-version 1.102351
+version 1.102360
 
 =head1 SYNOPSIS
 
@@ -106,6 +107,10 @@ currently provides.
 =head2 report
 
     Dispatches configuration to the statistics reporter module.
+
+=head1 SEE ALSO
+
+PPI::Tester
 
 =head1 AUTHOR
 

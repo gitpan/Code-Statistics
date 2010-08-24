@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Collector;
 BEGIN {
-  $Code::Statistics::Collector::VERSION = '1.102351';
+  $Code::Statistics::Collector::VERSION = '1.102360';
 }
 
 # ABSTRACT: collects statistics and dumps them to json
@@ -169,7 +169,7 @@ sub _get_all_submodules_for {
     my ( $self, $type ) = @_;
     my $class = "Code::Statistics::$type";
     require "Code/Statistics/$type.pm";    ## no critic qw( RequireBarewordIncludes )
-    my @list = $class->all;
+    my @list = sort $class->all;
 
     $_ =~ s/$class\::// for @list;
 
@@ -189,7 +189,7 @@ Code::Statistics::Collector - collects statistics and dumps them to json
 
 =head1 VERSION
 
-version 1.102351
+version 1.102360
 
 =head2 collect
     Locates files to collect statistics on, collects them and dumps them to

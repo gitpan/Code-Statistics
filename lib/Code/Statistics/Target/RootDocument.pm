@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Target::RootDocument;
 BEGIN {
-  $Code::Statistics::Target::RootDocument::VERSION = '1.102351';
+  $Code::Statistics::Target::RootDocument::VERSION = '1.102360';
 }
 
 # ABSTRACT: represents the root PPI document of a perl file
@@ -28,7 +28,7 @@ Code::Statistics::Target::RootDocument - represents the root PPI document of a p
 
 =head1 VERSION
 
-version 1.102351
+version 1.102360
 
 =head2 find_targets
     Returns the root PPI document of the given perl file.
