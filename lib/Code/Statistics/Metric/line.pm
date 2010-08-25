@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Metric::line;
 BEGIN {
-  $Code::Statistics::Metric::line::VERSION = '1.102360';
+  $Code::Statistics::Metric::line::VERSION = '1.102370';
 }
 
 # ABSTRACT: measures the line number of a target
@@ -18,6 +18,12 @@ sub measure {
     return $line;
 }
 
+
+sub is_insignificant {
+    my ( $class ) = @_;
+    return 1;
+}
+
 1;
 
 __END__
@@ -29,10 +35,16 @@ Code::Statistics::Metric::line - measures the line number of a target
 
 =head1 VERSION
 
-version 1.102360
+version 1.102370
 
 =head2 measure
     Returns the line number of the given target.
+
+=head2 is_insignificant
+    Returns true if the metric is considered statistically insignificant.
+
+    Returns false for this class, since it only identifies the location of a
+    target.
 
 =head1 AUTHOR
 

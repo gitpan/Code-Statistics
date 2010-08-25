@@ -33,6 +33,7 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'App::Cmd::Setup' => '0',
     'Carp' => '0',
+    'Clone::Fast' => '0',
     'Config::INI::Reader' => '0',
     'Data::Section' => '0',
     'File::Find::Rule' => '0',
@@ -55,7 +56,7 @@ my %WriteMakefileArgs = (
     'Template' => '0',
     'Term::ProgressBar::Simple' => '0'
   },
-  'VERSION' => '1.102360',
+  'VERSION' => '1.102370',
   'test' => {
     'TESTS' => 't/*.t'
   }

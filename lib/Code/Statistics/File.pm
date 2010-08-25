@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::File;
 BEGIN {
-  $Code::Statistics::File::VERSION = '1.102360';
+  $Code::Statistics::File::VERSION = '1.102370';
 }
 
 # ABSTRACT: loads a file, searches for targets in it and measures their metrics
@@ -91,8 +91,8 @@ sub _process_target_class {
 
 sub _are_compatible {
     my ( $self, $target, $metric ) = @_;
-    return 1 if "Code::Statistics::Target::$target"->supports( $metric );
-    return 1 if "Code::Statistics::Metric::$metric"->supports( $target );
+    return 1 if "Code::Statistics::Target::$target"->force_support( $metric );
+    return 1 if "Code::Statistics::Metric::$metric"->force_support( $target );
     return 0 if "Code::Statistics::Target::$target"->incompatible_with( $metric );
     return 0 if "Code::Statistics::Metric::$metric"->incompatible_with( $target );
     return 1;
@@ -118,7 +118,7 @@ Code::Statistics::File - loads a file, searches for targets in it and measures t
 
 =head1 VERSION
 
-version 1.102360
+version 1.102370
 
 =head2 analyze
     Finds targets in the given file and collects the metrics on those.

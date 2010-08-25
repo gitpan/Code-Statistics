@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Reporter;
 BEGIN {
-  $Code::Statistics::Reporter::VERSION = '1.102360';
+  $Code::Statistics::Reporter::VERSION = '1.102370';
 }
 
 # ABSTRACT: creates reports statistics and outputs them
@@ -17,10 +17,11 @@ use Code::Statistics::MooseTypes;
 use Carp 'confess';
 use JSON 'from_json';
 use File::Slurp 'read_file';
-use List::Util qw( reduce max sum );
+use List::Util qw( reduce max sum min );
 use Data::Section -setup;
 use Template;
 use List::MoreUtils qw( uniq );
+use Clone::Fast qw( clone );
 
 has quiet => ( isa => 'Bool' );
 
@@ -81,20 +82,41 @@ sub _strip_ignored_files {
 sub _sort_columns {
     my ( $self, %widths ) = @_;
 
-    my @columns = uniq grep { $widths{$_} } qw( path line col ), keys %widths;
+    # get all columns in the right order
+    my @start_columns = qw( path line col );
+    my %end_columns = ( 'deviation' => 1 );
+    my @columns = uniq grep { !$end_columns{$_} } @start_columns, keys %widths;
+    push @columns, keys %end_columns;
 
-    @columns = map {{ name => $_, width => $widths{$_} }} @columns;
+    @columns = grep { $widths{$_} } @columns;   # remove the ones that have no data
 
+    # expand the rest
+    @columns = map $self->_make_col_hash( $_, \%widths ), @columns;
+
+    # calculate the width left over for the first column
     my $used_width = sum( values %widths ) - $columns[0]{width};
-    my $path_width = $self->screen_width - $used_width;
-    $columns[0]{width} = max( $self->min_path_width, $path_width );
+    my $first_col_width = $self->screen_width - $used_width;
 
-    for ( @columns ) {
-        $_->{printname} = ucfirst $_->{name};
-        $_->{printname} = " $_->{printname}" if $_->{name} ne 'path';
+    # special treatment for the first column
+    for ( @columns[0..0] ) {
+        $_->{width} = max( $self->min_path_width, $first_col_width );
+        $_->{printname} = substr $_->{printname}, 1;
     }
 
     return \@columns;
+}
+
+sub _make_col_hash {
+    my ( $self, $col, $widths ) = @_;
+
+    my $short_name = $self->_col_short_name($_);
+    my $col_hash = {
+        name => $_,
+        width => $widths->{$_},
+        printname => " $short_name",
+    };
+
+    return $col_hash;
 }
 
 sub _prepare_target_types {
@@ -127,35 +149,57 @@ sub _process_target_type {
 sub _process_metric {
     my ( $self, $target_type, $metric ) = @_;
 
-    return if $self->_is_only_loc_metric( $metric );
-    return if !$target_type->{list}[0];
+    return if "Code::Statistics::Metric::$metric"->is_insignificant;
+    return if !$target_type->{list} or !@{$target_type->{list}};
     return if !exists $target_type->{list}[0]{$metric};
 
     my @list = reverse sort { $a->{$metric} <=> $b->{$metric} } @{$target_type->{list}};
-    my @top = grep { defined } @list[ 0 .. $self->table_length - 1 ];
-    @list = grep { defined } @list; # the above autovivifies some entries, this reverses that
 
-    my $metric_data = {
-        top => \@top,
-        type => $metric,
-    };
+    my $metric_data = { type => $metric };
 
-    $metric_data->{bottom} = $self->_get_bottom( @list );
     $metric_data->{avg} = $self->_calc_average( $metric, @list );
-    $metric_data->{widths} = $self->_calc_widths( @{$metric_data->{bottom}}, @top );
-    $metric_data->{columns} = $self->_sort_columns( %{ $metric_data->{widths} } );
+
+    $self->_prepare_metric_tables( $metric_data, @list ) if $metric_data->{avg} and $metric_data->{avg} != 1;
 
     return $metric_data;
 }
 
-sub _calc_widths {
-    my ( $self, $bottom, @list ) = @_;
+sub _prepare_metric_tables {
+    my ( $self, $metric_data, @list ) = @_;
 
-    my @columns = keys %{$list[0]};
+    $metric_data->{top} = $self->_get_top( @list );
+    $metric_data->{bottom} = $self->_get_bottom( @list );
+    $self->_calc_deviation( $_, $metric_data ) for ( @{$metric_data->{top}}, @{$metric_data->{bottom}} );
+    $metric_data->{widths} = $self->_calc_widths( $metric_data );
+    $metric_data->{columns} = $self->_sort_columns( %{ $metric_data->{widths} } );
+
+    return;
+}
+
+sub _calc_deviation {
+    my ( $self, $line, $metric_data ) = @_;
+
+    my $avg = $metric_data->{avg};
+    my $type = $metric_data->{type};
+
+    my $deviation = $line->{$type} / $avg;
+    $line->{deviation} = sprintf '%.2f', $deviation;
+
+    return;
+}
+
+sub _calc_widths {
+    my ( $self, $metric_data ) = @_;
+
+    my @entries = @{$metric_data->{top}};
+    @entries = ( @entries, @{$metric_data->{bottom}} );
+
+    my @columns = keys %{$entries[0]};
 
     my %widths;
     for my $col ( @columns ) {
-        my @lengths = map { length $_->{$col} } @list, { $col => $col };
+        my @lengths = map { length $_->{$col} } @entries;
+        push @lengths, length $self->_col_short_name($col);
         my $max = max @lengths;
         $widths{$col} = $max;
     }
@@ -163,13 +207,6 @@ sub _calc_widths {
     $_++ for values %widths;
 
     return \%widths;
-}
-
-sub _is_only_loc_metric {
-    my ( $self, $metric ) = @_;
-    return 1 if $metric eq 'line';
-    return 1 if $metric eq 'col';
-    return 0;
 }
 
 sub _calc_average {
@@ -181,19 +218,33 @@ sub _calc_average {
     return $average;
 }
 
+sub _get_top {
+    my ( $self, @list ) = @_;
+
+    my $slice_end = min( $#list, $self->table_length - 1 );
+    my @top = grep { defined } @list[ 0 .. $slice_end ];
+
+    return clone \@top;
+}
+
 sub _get_bottom {
     my ( $self, @list ) = @_;
 
     return [] if @list < $self->table_length;
 
     @list = reverse @list;
-    my @bottom = @list[ 0 .. $self->table_length - 1 ];
-    @list = grep { defined } @list; # the above autovivifies some entries, this reverses that
+    my $slice_end = min( $#list, $self->table_length - 1 );
+    my @bottom = @list[ 0 .. $slice_end ];
 
     my $bottom_size = @list - $self->table_length;
     @bottom = splice @bottom, 0, $bottom_size if $bottom_size < $self->table_length;
 
-    return \@bottom;
+    return clone \@bottom;
+}
+
+sub _col_short_name {
+    my ( $self, $col ) = @_;
+    return ucfirst "Code::Statistics::Metric::$col"->short_name;
 }
 
 1;
@@ -208,7 +259,7 @@ Code::Statistics::Reporter - creates reports statistics and outputs them
 
 =head1 VERSION
 
-version 1.102360
+version 1.102370
 
 =head2 reports
     Creates a report on given code statistics and outputs it in some way.
@@ -250,7 +301,7 @@ __[ dos_template ]__
     [%- END %]
 
     [%- FOR metric IN target.metrics %]
-        [%- NEXT IF metric.avg == 1 or metric.avg == 0 %]
+        [%- NEXT IF !metric.defined( 'top' ) and !metric.defined( 'bottom' ) %]
 
         [%- " " FILTER repeat( ( 80 - metric.type.length ) / 2 ) %][% metric.type %]
 

@@ -1,7 +1,7 @@
 ## no critic
 package Code::Statistics::SlurpyConstructor::Role::Object;
 BEGIN {
-  $Code::Statistics::SlurpyConstructor::Role::Object::VERSION = '1.102360';
+  $Code::Statistics::SlurpyConstructor::Role::Object::VERSION = '1.102370';
 }
 
 # ABSTRACT: Internal class for Code::Statistics::SlurpyConstructor
@@ -88,7 +88,7 @@ Code::Statistics::SlurpyConstructor::Role::Object - Internal class for Code::Sta
 
 =head1 VERSION
 
-version 1.102360
+version 1.102370
 
 =head1 NAME
 

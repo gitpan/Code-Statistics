@@ -3,14 +3,14 @@ use warnings;
 
 package Code::Statistics::Target;
 BEGIN {
-  $Code::Statistics::Target::VERSION = '1.102360';
+  $Code::Statistics::Target::VERSION = '1.102370';
 }
 
 # ABSTRACT: base class for Code::Statistic targets
 
 use 5.004;
 
-use Module::Pluggable search_path => __PACKAGE__, sub_name => 'all';
+use Module::Pluggable search_path => __PACKAGE__, require => 1, sub_name => 'all';
 
 
 sub find_targets {
@@ -25,9 +25,9 @@ sub incompatible_with {
 }
 
 
-sub supports {
+sub force_support {
     my ( $class, $target ) = @_;
-    return 1;
+    return 0;
 }
 
 1;
@@ -41,7 +41,7 @@ Code::Statistics::Target - base class for Code::Statistic targets
 
 =head1 VERSION
 
-version 1.102360
+version 1.102370
 
 =head2 find_targets
     Returns an arrayref to a list of targets found in the given file.
@@ -55,14 +55,14 @@ version 1.102360
     identifiers after 'Code::Statistics::Metric::'.
     Default is that all targets are compatible with all metrics.
 
-=head2 supports
-    Returns true if the given metric is supported by this target.
+=head2 force_support
+    Returns true if the given metric is forcibly supported by this target.
     Is called with the target class name and a string representing the metric
     identifiers after 'Code::Statistics::Metric::'.
-    Default is that all targets are compatible with all metrics.
+    Default is that no forcing happens.
 
     Has higher precedence than 'incompatible_with' and should be used to
-    incompatibilities set by other metrics.
+    override incompatibilities set by other metrics.
 
 =head1 AUTHOR
 

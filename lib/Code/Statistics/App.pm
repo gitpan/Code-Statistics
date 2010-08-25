@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::App;
 BEGIN {
-  $Code::Statistics::App::VERSION = '1.102360';
+  $Code::Statistics::App::VERSION = '1.102370';
 }
 
 # ABSTRACT: handles global command configuration and cstat instantiation
@@ -41,7 +41,7 @@ Code::Statistics::App - handles global command configuration and cstat instantia
 
 =head1 VERSION
 
-version 1.102360
+version 1.102370
 
 =head2 cstat
     Creates a Code::Statistics object with the given commandline args.

@@ -28,6 +28,7 @@
          "requires" : {
             "App::Cmd::Setup" : 0,
             "Carp" : 0,
+            "Clone::Fast" : 0,
             "Config::INI::Reader" : 0,
             "Data::Section" : 0,
             "File::Find::Rule" : 0,
@@ -75,7 +76,7 @@
          "web" : "http://github.com/wchristian/code-statistics"
       }
    },
-   "version" : "1.102360",
+   "version" : "1.102370",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

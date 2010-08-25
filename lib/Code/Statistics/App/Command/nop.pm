@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::App::Command::nop;
 BEGIN {
-  $Code::Statistics::App::Command::nop::VERSION = '1.102360';
+  $Code::Statistics::App::Command::nop::VERSION = '1.102370';
 }
 
 # ABSTRACT: does nothing
@@ -29,7 +29,7 @@ Code::Statistics::App::Command::nop - does nothing
 
 =head1 VERSION
 
-version 1.102360
+version 1.102370
 
 =head1 AUTHOR
 

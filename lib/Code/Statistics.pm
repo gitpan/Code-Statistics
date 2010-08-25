@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics;
 BEGIN {
-  $Code::Statistics::VERSION = '1.102360';
+  $Code::Statistics::VERSION = '1.102370';
 }
 
 # ABSTRACT: collects and reports statistics on perl code
@@ -54,7 +54,7 @@ Code::Statistics - collects and reports statistics on perl code
 
 =head1 VERSION
 
-version 1.102360
+version 1.102370
 
 =head1 SYNOPSIS
 
@@ -107,6 +107,12 @@ currently provides.
 =head2 report
 
     Dispatches configuration to the statistics reporter module.
+
+=head1 TODO
+
+Possibly elevate metrics to objects to allow parametrized metrics during
+collection. Not sure if i want this or whether making more generic metrics is a
+better idea. http://gist.github.com/549132
 
 =head1 SEE ALSO
 

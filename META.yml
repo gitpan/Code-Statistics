@@ -28,6 +28,7 @@ no_index:
 requires:
   App::Cmd::Setup: 0
   Carp: 0
+  Clone::Fast: 0
   Config::INI::Reader: 0
   Data::Section: 0
   File::Find::Rule: 0
@@ -52,7 +53,7 @@ requires:
   perl: 5.006_003
 resources:
   repository: http://github.com/wchristian/code-statistics.git
-version: 1.102360
+version: 1.102370
 x_Dist_Zilla:
   plugins:
     -

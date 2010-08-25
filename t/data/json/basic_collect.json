@@ -311,8 +311,10 @@
    "ignored_files" : [],
    "metrics" : [
       "col",
+      "deviation",
       "line",
       "lines",
+      "path",
       "sdepth",
       "size"
    ]

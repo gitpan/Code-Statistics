@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Collector;
 BEGIN {
-  $Code::Statistics::Collector::VERSION = '1.102360';
+  $Code::Statistics::Collector::VERSION = '1.102370';
 }
 
 # ABSTRACT: collects statistics and dumps them to json
@@ -14,6 +14,8 @@ use Moose;
 use MooseX::HasDefaults::RO;
 use Code::Statistics::MooseTypes;
 use Code::Statistics::SlurpyConstructor;
+use Code::Statistics::Metric;
+use Code::Statistics::Target;
 
 use File::Find::Rule::Perl;
 use Code::Statistics::File;
@@ -68,9 +70,6 @@ has command_args => (
 
 sub collect {
     my ( $self ) = @_;
-
-    require "Code/Statistics/Target/$_.pm" for @{ $self->targets };    ## no critic qw( RequireBarewordIncludes )
-    require "Code/Statistics/Metric/$_.pm" for @{ $self->metrics };    ## no critic qw( RequireBarewordIncludes )
 
     $_->analyze for @{ $self->files };
 
@@ -168,7 +167,6 @@ sub _strip_file {
 sub _get_all_submodules_for {
     my ( $self, $type ) = @_;
     my $class = "Code::Statistics::$type";
-    require "Code/Statistics/$type.pm";    ## no critic qw( RequireBarewordIncludes )
     my @list = sort $class->all;
 
     $_ =~ s/$class\::// for @list;
@@ -189,7 +187,7 @@ Code::Statistics::Collector - collects statistics and dumps them to json
 
 =head1 VERSION
 
-version 1.102360
+version 1.102370
 
 =head2 collect
     Locates files to collect statistics on, collects them and dumps them to
