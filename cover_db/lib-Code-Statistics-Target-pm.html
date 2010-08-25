@@ -25,12 +25,12 @@ http://www.pjcj.net
 <div><br/></div>
 <table>
 <tr><th>line</th><th>stmt</th><th>bran</th><th>cond</th><th>sub</th><th>pod</th><th>time</th><th>code</th></tr>
-<tr><td class="h">1</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L1">2</a></div></td><td></td><td><div>0</div><div>0</div><div>0</div></td><td class="s">use strict;</td></tr>
-<tr><td class="h">2</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L2">2</a></div></td><td></td><td><div>0</div><div>0</div><div>0</div></td><td class="s">use warnings;</td></tr>
+<tr><td class="h">1</td><td><div class="c3">1</div><div class="c3">1</div><div class="c3">1</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L1">1</a></div></td><td></td><td><div>0</div><div>0</div><div>0</div></td><td class="s">use strict;</td></tr>
+<tr><td class="h">2</td><td><div class="c3">1</div><div class="c3">1</div><div class="c3">1</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L2">1</a></div></td><td></td><td><div>0</div><div>0</div><div>0</div></td><td class="s">use warnings;</td></tr>
 <tr><td class="h">3</td><td colspan="7"></td></tr><tr><td class="h">4</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">package Code::Statistics::Target;</td></tr>
 <tr><td class="h">5</td><td colspan="7"></td></tr><tr><td class="h">6</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s"># ABSTRACT: base class for Code::Statistic targets</td></tr>
-<tr><td class="h">7</td><td colspan="7"></td></tr><tr><td class="h">8</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L8">2</a></div></td><td></td><td><div>0</div><div>0</div><div>0</div></td><td class="s">use 5.004;</td></tr>
-<tr><td class="h">9</td><td colspan="7"></td></tr><tr><td class="h">10</td><td><div class="c3">2</div><div class="c3">2</div><div class="c3">2</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L10">2</a></div></td><td></td><td><div>0</div><div>0</div><div>0</div></td><td class="s">use Module::Pluggable search_path =&gt; __PACKAGE__, require =&gt; 1, sub_name =&gt; &#39;all&#39;;</td></tr>
+<tr><td class="h">7</td><td colspan="7"></td></tr><tr><td class="h">8</td><td><div class="c3">1</div><div class="c3">1</div><div class="c3">1</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L8">1</a></div></td><td></td><td><div>0</div><div>0</div><div>0</div></td><td class="s">use 5.004;</td></tr>
+<tr><td class="h">9</td><td colspan="7"></td></tr><tr><td class="h">10</td><td><div class="c3">1</div><div class="c3">1</div><div class="c3">1</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L10">1</a></div></td><td></td><td><div>0</div><div>0</div><div>0</div></td><td class="s">use Module::Pluggable search_path =&gt; __PACKAGE__, require =&gt; 1, sub_name =&gt; &#39;all&#39;;</td></tr>
 <tr><td class="h">11</td><td colspan="7"></td></tr><tr><td class="h">12 - 18</td><td colspan="6"></td><td class="s"><pre>=head2 find_targets
     Returns an arrayref to a list of targets found in the given file.
     Is called with the target class name and a Code::Statistics::File object.
@@ -49,21 +49,21 @@ http://www.pjcj.net
     Default is that all targets are compatible with all metrics.
 =cut</pre></td></tr>
 <tr><td class="h">31</td><td colspan="7"></td></tr><tr><td class="h">32</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub incompatible_with {</td></tr>
-<tr><td class="h">33</td><td><div class="c3">288</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L33">288</a></div></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my ( $class, $target ) = @_;</td></tr>
-<tr><td class="h">34</td><td><div class="c3">288</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</td></tr>
+<tr><td class="h">33</td><td><div class="c3">168</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L33">168</a></div></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my ( $class, $target ) = @_;</td></tr>
+<tr><td class="h">34</td><td><div class="c3">168</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</td></tr>
 <tr><td class="h">35</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
-<tr><td class="h">36</td><td colspan="7"></td></tr><tr><td class="h">37 - 45</td><td colspan="6"></td><td class="s"><pre>=head2 supports
-    Returns true if the given metric is supported by this target.
+<tr><td class="h">36</td><td colspan="7"></td></tr><tr><td class="h">37 - 45</td><td colspan="6"></td><td class="s"><pre>=head2 force_support
+    Returns true if the given metric is forcibly supported by this target.
     Is called with the target class name and a string representing the metric
     identifiers after &#39;Code::Statistics::Metric::&#39;.
-    Default is that all targets are compatible with all metrics.
+    Default is that no forcing happens.
 
     Has higher precedence than &#39;incompatible_with&#39; and should be used to
-    incompatibilities set by other metrics.
+    override incompatibilities set by other metrics.
 =cut</pre></td></tr>
-<tr><td class="h">46</td><td colspan="7"></td></tr><tr><td class="h">47</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub supports {</td></tr>
-<tr><td class="h">48</td><td><div class="c3">288</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L48">288</a></div></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my ( $class, $target ) = @_;</td></tr>
-<tr><td class="h">49</td><td><div class="c3">288</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</td></tr>
+<tr><td class="h">46</td><td colspan="7"></td></tr><tr><td class="h">47</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub force_support {</td></tr>
+<tr><td class="h">48</td><td><div class="c3">168</div></td><td></td><td></td><td><div class="c3"><a href="lib-Code-Statistics-Target-pm--subroutine.html#L48">168</a></div></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my ( $class, $target ) = @_;</td></tr>
+<tr><td class="h">49</td><td><div class="c3">168</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</td></tr>
 <tr><td class="h">50</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">}</td></tr>
 <tr><td class="h">51</td><td colspan="7"></td></tr><tr><td class="h">52</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">1;</td></tr>
 </table>

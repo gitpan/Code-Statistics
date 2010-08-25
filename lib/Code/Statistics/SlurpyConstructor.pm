@@ -1,7 +1,7 @@
 ## no critic
 package Code::Statistics::SlurpyConstructor;
 BEGIN {
-  $Code::Statistics::SlurpyConstructor::VERSION = '1.102370';
+  $Code::Statistics::SlurpyConstructor::VERSION = '1.102371';
 }
 
 # ABSTRACT: temporary clone of MooseX::SlurpyConstructor with some fixes
@@ -49,7 +49,7 @@ Code::Statistics::SlurpyConstructor - temporary clone of MooseX::SlurpyConstruct
 
 =head1 VERSION
 
-version 1.102370
+version 1.102371
 
 =head2 init_meta
 

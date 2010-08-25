@@ -30,8 +30,8 @@ http://www.pjcj.net
 <tr><td class="h"><a id="L71">71</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if $self-&gt;foreign_paths</td></tr>
 <tr><td class="h"><a id="L81">81</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if not @supported_metrics</td></tr>
 <tr><td class="h"><a id="L84">84</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if not $targets</td></tr>
-<tr><td class="h"><a id="L94">94</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if &quot;Code::Statistics::Target::$target&quot;-&gt;supports($metric)</td></tr>
-<tr><td class="h"><a id="L95">95</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if &quot;Code::Statistics::Metric::$metric&quot;-&gt;supports($target)</td></tr>
+<tr><td class="h"><a id="L94">94</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if &quot;Code::Statistics::Target::$target&quot;-&gt;force_support($metric)</td></tr>
+<tr><td class="h"><a id="L95">95</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if &quot;Code::Statistics::Metric::$metric&quot;-&gt;force_support($target)</td></tr>
 <tr><td class="h"><a id="L96">96</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if &quot;Code::Statistics::Target::$target&quot;-&gt;incompatible_with($metric)</td></tr>
 <tr><td class="h"><a id="L97">97</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if &quot;Code::Statistics::Metric::$metric&quot;-&gt;incompatible_with($target)</td></tr>
 </table>

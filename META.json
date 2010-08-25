@@ -76,7 +76,7 @@
          "web" : "http://github.com/wchristian/code-statistics"
       }
    },
-   "version" : "1.102370",
+   "version" : "1.102371",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

@@ -33,12 +33,12 @@ return substr($string, 0 - $length, $length);
 }
 }, \$output)</td></tr>
 <tr><td class="h"><a id="L65">65</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if not $self-&gt;quiet</td></tr>
-<tr><td class="h"><a id="L95">95</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if $$_{&#39;name&#39;} ne &#39;path&#39;</td></tr>
-<tr><td class="h"><a id="L131">131</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if not &quot;Code::Statistics::Metric::$metric&quot;-&gt;is_significant</td></tr>
-<tr><td class="h"><a id="L132">132</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if not $$target_type{&#39;list&#39;}[0]</td></tr>
-<tr><td class="h"><a id="L133">133</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if not exists $$target_type{&#39;list&#39;}[0]{$metric}</td></tr>
-<tr><td class="h"><a id="L181">181</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if @list &lt; $self-&gt;table_length</td></tr>
-<tr><td class="h"><a id="L188">188</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if $bottom_size &lt; $self-&gt;table_length</td></tr>
+<tr><td class="h"><a id="L152">152</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if &quot;Code::Statistics::Metric::$metric&quot;-&gt;is_insignificant</td></tr>
+<tr><td class="h"><a id="L153">153</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if not $$target_type{&#39;list&#39;} or not @{$$target_type{&#39;list&#39;};}</td></tr>
+<tr><td class="h"><a id="L154">154</a></td><td class="c0">50</td><td class="c0">T</td><td class="c3">F</td><td class="s">if not exists $$target_type{&#39;list&#39;}[0]{$metric}</td></tr>
+<tr><td class="h"><a id="L162">162</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if $$metric_data{&#39;avg&#39;} and $$metric_data{&#39;avg&#39;} != 1</td></tr>
+<tr><td class="h"><a id="L233">233</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if @list &lt; $self-&gt;table_length</td></tr>
+<tr><td class="h"><a id="L240">240</a></td><td class="c3">100</td><td class="c3">T</td><td class="c3">F</td><td class="s">if $bottom_size &lt; $self-&gt;table_length</td></tr>
 </table>
 </body>
 </html>

@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Reporter;
 BEGIN {
-  $Code::Statistics::Reporter::VERSION = '1.102370';
+  $Code::Statistics::Reporter::VERSION = '1.102371';
 }
 
 # ABSTRACT: creates reports statistics and outputs them
@@ -13,6 +13,7 @@ use 5.004;
 use Moose;
 use MooseX::HasDefaults::RO;
 use Code::Statistics::MooseTypes;
+use Code::Statistics::Metric;
 
 use Carp 'confess';
 use JSON 'from_json';
@@ -259,7 +260,7 @@ Code::Statistics::Reporter - creates reports statistics and outputs them
 
 =head1 VERSION
 
-version 1.102370
+version 1.102371
 
 =head2 reports
     Creates a report on given code statistics and outputs it in some way.

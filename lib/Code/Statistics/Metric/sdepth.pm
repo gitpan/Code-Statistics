@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Metric::sdepth;
 BEGIN {
-  $Code::Statistics::Metric::sdepth::VERSION = '1.102370';
+  $Code::Statistics::Metric::sdepth::VERSION = '1.102371';
 }
 
 # ABSTRACT: measures the scope depth of a target
@@ -40,7 +40,7 @@ Code::Statistics::Metric::sdepth - measures the scope depth of a target
 
 =head1 VERSION
 
-version 1.102370
+version 1.102371
 
 =head2 measure
     Returns the scope depth of the given target.

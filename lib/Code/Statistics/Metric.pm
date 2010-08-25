@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Metric;
 BEGIN {
-  $Code::Statistics::Metric::VERSION = '1.102370';
+  $Code::Statistics::Metric::VERSION = '1.102371';
 }
 
 # ABSTRACT: base class for Code::Statistic metrics
@@ -43,6 +43,12 @@ sub is_insignificant {
     return 0;
 }
 
+
+sub import {
+    Code::Statistics::Metric->all;
+    return;
+}
+
 1;
 
 __END__
@@ -54,7 +60,7 @@ Code::Statistics::Metric - base class for Code::Statistic metrics
 
 =head1 VERSION
 
-version 1.102370
+version 1.102371
 
 =head2 measure
     Returns the metric of the given target.
@@ -87,6 +93,11 @@ version 1.102370
 =head2 is_insignificant
     Returns true if the metric is considered statistically insignificant.
     Default is false.
+
+=head2 import
+
+    Custom import to ensure that all possible metric plugins are loaded when
+    this module is loaded.
 
 =head1 AUTHOR
 

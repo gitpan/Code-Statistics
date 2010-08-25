@@ -1,7 +1,7 @@
 ## no critic
 package Code::Statistics::SlurpyConstructor::Role::Attribute;
 BEGIN {
-  $Code::Statistics::SlurpyConstructor::Role::Attribute::VERSION = '1.102370';
+  $Code::Statistics::SlurpyConstructor::Role::Attribute::VERSION = '1.102371';
 }
 
 # ABSTRACT: Internal class for Code::Statistics::SlurpyConstructor
@@ -48,7 +48,7 @@ Code::Statistics::SlurpyConstructor::Role::Attribute - Internal class for Code::
 
 =head1 VERSION
 
-version 1.102370
+version 1.102371
 
 =head1 NAME
 
