@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Config;
 BEGIN {
-  $Code::Statistics::Config::VERSION = '1.102371';
+  $Code::Statistics::Config::VERSION = '1.102390';
 }
 
 # ABSTRACT: merges configuration options from various sources
@@ -88,7 +88,7 @@ Code::Statistics::Config - merges configuration options from various sources
 
 =head1 VERSION
 
-version 1.102371
+version 1.102390
 
 =head2 assemble
     Builds the command-related configuration hash. The hash contains all config

@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::File;
 BEGIN {
-  $Code::Statistics::File::VERSION = '1.102371';
+  $Code::Statistics::File::VERSION = '1.102390';
 }
 
 # ABSTRACT: loads a file, searches for targets in it and measures their metrics
@@ -118,7 +118,7 @@ Code::Statistics::File - loads a file, searches for targets in it and measures t
 
 =head1 VERSION
 
-version 1.102371
+version 1.102390
 
 =head2 analyze
     Finds targets in the given file and collects the metrics on those.

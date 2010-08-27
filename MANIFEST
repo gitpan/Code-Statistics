@@ -127,6 +127,7 @@ lib/Code/Statistics/Collector.pm
 lib/Code/Statistics/Config.pm
 lib/Code/Statistics/File.pm
 lib/Code/Statistics/Metric.pm
+lib/Code/Statistics/Metric/ccomp.pm
 lib/Code/Statistics/Metric/col.pm
 lib/Code/Statistics/Metric/deviation.pm
 lib/Code/Statistics/Metric/line.pm

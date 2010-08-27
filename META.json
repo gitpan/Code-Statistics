@@ -48,6 +48,7 @@
             "MooseX::HasDefaults::RO" : 0,
             "PPI::Document" : 0,
             "Path::Class" : 0,
+            "Perl::Metrics::Simple::Analysis::File" : 0,
             "Template" : 0,
             "Term::ProgressBar::Simple" : 0,
             "perl" : "5.006_003"
@@ -76,7 +77,7 @@
          "web" : "http://github.com/wchristian/code-statistics"
       }
    },
-   "version" : "1.102371",
+   "version" : "1.102390",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

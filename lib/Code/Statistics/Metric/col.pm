@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Metric::col;
 BEGIN {
-  $Code::Statistics::Metric::col::VERSION = '1.102371';
+  $Code::Statistics::Metric::col::VERSION = '1.102390';
 }
 
 # ABSTRACT: measures the starting column of a target
@@ -35,7 +35,7 @@ Code::Statistics::Metric::col - measures the starting column of a target
 
 =head1 VERSION
 
-version 1.102371
+version 1.102390
 
 =head2 measure
     Returns the starting column of the given target.

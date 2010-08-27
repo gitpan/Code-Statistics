@@ -53,10 +53,11 @@ my %WriteMakefileArgs = (
     'MooseX::HasDefaults::RO' => '0',
     'PPI::Document' => '0',
     'Path::Class' => '0',
+    'Perl::Metrics::Simple::Analysis::File' => '0',
     'Template' => '0',
     'Term::ProgressBar::Simple' => '0'
   },
-  'VERSION' => '1.102371',
+  'VERSION' => '1.102390',
   'test' => {
     'TESTS' => 't/*.t'
   }

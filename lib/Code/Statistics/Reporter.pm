@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Reporter;
 BEGIN {
-  $Code::Statistics::Reporter::VERSION = '1.102371';
+  $Code::Statistics::Reporter::VERSION = '1.102390';
 }
 
 # ABSTRACT: creates reports statistics and outputs them
@@ -86,7 +86,7 @@ sub _sort_columns {
     # get all columns in the right order
     my @start_columns = qw( path line col );
     my %end_columns = ( 'deviation' => 1 );
-    my @columns = uniq grep { !$end_columns{$_} } @start_columns, keys %widths;
+    my @columns = uniq grep { !$end_columns{$_} } @start_columns, sort keys %widths;
     push @columns, keys %end_columns;
 
     @columns = grep { $widths{$_} } @columns;   # remove the ones that have no data
@@ -260,7 +260,7 @@ Code::Statistics::Reporter - creates reports statistics and outputs them
 
 =head1 VERSION
 
-version 1.102371
+version 1.102390
 
 =head2 reports
     Creates a report on given code statistics and outputs it in some way.

@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Metric::deviation;
 BEGIN {
-  $Code::Statistics::Metric::deviation::VERSION = '1.102371';
+  $Code::Statistics::Metric::deviation::VERSION = '1.102390';
 }
 
 # ABSTRACT: measures the starting column of a target
@@ -40,7 +40,7 @@ Code::Statistics::Metric::deviation - measures the starting column of a target
 
 =head1 VERSION
 
-version 1.102371
+version 1.102390
 
 =head2 incompatible_with
     Returns true if the given target is explicitly not supported by this metric.
