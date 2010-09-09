@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Reporter;
 BEGIN {
-  $Code::Statistics::Reporter::VERSION = '1.102520';
+  $Code::Statistics::Reporter::VERSION = '1.102521';
 }
 
 # ABSTRACT: creates reports statistics and outputs them
@@ -260,7 +260,7 @@ Code::Statistics::Reporter - creates reports statistics and outputs them
 
 =head1 VERSION
 
-version 1.102520
+version 1.102521
 
 =head2 reports
     Creates a report on given code statistics and outputs it in some way.

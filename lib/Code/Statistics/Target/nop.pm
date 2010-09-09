@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Target::nop;
 BEGIN {
-  $Code::Statistics::Target::nop::VERSION = '1.102520';
+  $Code::Statistics::Target::nop::VERSION = '1.102521';
 }
 
 # ABSTRACT: represents nothing
@@ -25,7 +25,7 @@ Code::Statistics::Target::nop - represents nothing
 
 =head1 VERSION
 
-version 1.102520
+version 1.102521
 
 =head2 find_targets
     Returns nothing.

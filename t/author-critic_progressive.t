@@ -17,11 +17,11 @@ use lib 'lib';
 use Test::More;
 use Try::Tiny;
 use Path::Class qw(file);
-    
-try { 
+
+try {
     use Test::Perl::Critic::Progressive qw( :all );
 }
-catch {    
+catch {
     plan skip_all => 'T::P::C::Progressive required for this test' if $@;
 };
 
@@ -29,7 +29,7 @@ my $root_path = q<D:\Code-Statistics>;
 my $step_size = 0;
 my $severity = 0;
 my $exclude = [qw<  >];
-    
+
 my $history_file = q<.perlcritic_history>;
 $history_file = qq<$root_path/$history_file> if file($history_file)->is_relative;
 
@@ -42,18 +42,18 @@ exit;
 
 sub run_test {
     my ( $history_file, $step_size, $exclude, $severity, $profile ) = @_;
-    
+
     set_history_file( $history_file );
     set_total_step_size( $step_size );
-    
+
     my %args;
     $args{-severity} = $severity if $severity;
     $args{-profile} = $profile if $profile;
     $args{-exclude} = $exclude if $exclude;
-    
+
     set_critic_args( %args ) if keys %args;
-    
+
     progressive_critic_ok();
-    
+
     return;
 }

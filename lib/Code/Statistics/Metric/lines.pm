@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Metric::lines;
 BEGIN {
-  $Code::Statistics::Metric::lines::VERSION = '1.102520';
+  $Code::Statistics::Metric::lines::VERSION = '1.102521';
 }
 
 # ABSTRACT: measures the line count of a target
@@ -29,7 +29,7 @@ Code::Statistics::Metric::lines - measures the line count of a target
 
 =head1 VERSION
 
-version 1.102520
+version 1.102521
 
 =head2 measure
     Returns the line count of the given target.

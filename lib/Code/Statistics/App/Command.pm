@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::App::Command;
 BEGIN {
-  $Code::Statistics::App::Command::VERSION = '1.102520';
+  $Code::Statistics::App::Command::VERSION = '1.102521';
 }
 
 # ABSTRACT: base class for commands
@@ -26,7 +26,7 @@ Code::Statistics::App::Command - base class for commands
 
 =head1 VERSION
 
-version 1.102520
+version 1.102521
 
 =head2 cstat
     Dispatches to the Code::Statistics object creation routine.

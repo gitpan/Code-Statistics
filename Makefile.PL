@@ -55,7 +55,7 @@ my %WriteMakefileArgs = (
     'Template' => '0',
     'Term::ProgressBar::Simple' => '0'
   },
-  'VERSION' => '1.102520',
+  'VERSION' => '1.102521',
   'test' => {
     'TESTS' => 't/*.t'
   }
