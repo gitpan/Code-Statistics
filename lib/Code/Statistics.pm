@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics;
 BEGIN {
-  $Code::Statistics::VERSION = '1.102390';
+  $Code::Statistics::VERSION = '1.102520';
 }
 
 # ABSTRACT: collects and reports statistics on perl code
@@ -16,7 +16,7 @@ use Code::Statistics::Reporter;
 
 use Moose;
 use MooseX::HasDefaults::RO;
-use Code::Statistics::SlurpyConstructor;
+use MooseX::SlurpyConstructor 1.1;
 
 has config_args => (
     is      => 'ro',
@@ -54,7 +54,7 @@ Code::Statistics - collects and reports statistics on perl code
 
 =head1 VERSION
 
-version 1.102390
+version 1.102520
 
 =head1 SYNOPSIS
 

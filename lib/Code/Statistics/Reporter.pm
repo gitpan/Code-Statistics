@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Reporter;
 BEGIN {
-  $Code::Statistics::Reporter::VERSION = '1.102390';
+  $Code::Statistics::Reporter::VERSION = '1.102520';
 }
 
 # ABSTRACT: creates reports statistics and outputs them
@@ -22,7 +22,7 @@ use List::Util qw( reduce max sum min );
 use Data::Section -setup;
 use Template;
 use List::MoreUtils qw( uniq );
-use Clone::Fast qw( clone );
+use Clone qw( clone );
 
 has quiet => ( isa => 'Bool' );
 
@@ -260,7 +260,7 @@ Code::Statistics::Reporter - creates reports statistics and outputs them
 
 =head1 VERSION
 
-version 1.102390
+version 1.102520
 
 =head2 reports
     Creates a report on given code statistics and outputs it in some way.

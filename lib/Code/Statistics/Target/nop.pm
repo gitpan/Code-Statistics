@@ -1,22 +1,18 @@
 use strict;
 use warnings;
 
-package Code::Statistics::App::Command::nop;
+package Code::Statistics::Target::nop;
 BEGIN {
-  $Code::Statistics::App::Command::nop::VERSION = '1.102520';
+  $Code::Statistics::Target::nop::VERSION = '1.102520';
 }
 
-# ABSTRACT: does nothing
+# ABSTRACT: represents nothing
 
-use Code::Statistics::App -command;
+use Moose;
+extends 'Code::Statistics::Target';
 
-sub abstract { return 'do nothing' }
 
-sub execute {
-    my ( $self, $opt, $arg ) = @_;
-
-    return $self->cstat;
-}
+sub find_targets {}
 
 1;
 
@@ -25,11 +21,14 @@ __END__
 
 =head1 NAME
 
-Code::Statistics::App::Command::nop - does nothing
+Code::Statistics::Target::nop - represents nothing
 
 =head1 VERSION
 
 version 1.102520
+
+=head2 find_targets
+    Returns nothing.
 
 =head1 AUTHOR
 

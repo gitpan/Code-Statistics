@@ -28,7 +28,7 @@ no_index:
 requires:
   App::Cmd::Setup: 0
   Carp: 0
-  Clone::Fast: 0
+  Clone: 0
   Config::INI::Reader: 0
   Data::Section: 0
   File::Find::Rule: 0
@@ -41,20 +41,18 @@ requires:
   List::Util: 0
   Module::Pluggable: 0
   Moose: 0
-  Moose::Exporter: 0
-  Moose::Role: 0
-  Moose::Util::MetaRole: 0
   Moose::Util::TypeConstraints: 0
   MooseX::HasDefaults::RO: 0
+  MooseX::SlurpyConstructor: 1.1
   PPI::Document: 0
   Path::Class: 0
-  Perl::Metrics::Simple::Analysis::File: 0
+  Perl::Critic::Utils::McCabe: 0
   Template: 0
   Term::ProgressBar::Simple: 0
   perl: 5.006_003
 resources:
   repository: http://github.com/wchristian/code-statistics.git
-version: 1.102390
+version: 1.102520
 x_Dist_Zilla:
   plugins:
     -

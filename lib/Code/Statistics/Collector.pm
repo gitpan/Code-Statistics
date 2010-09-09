@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Collector;
 BEGIN {
-  $Code::Statistics::Collector::VERSION = '1.102390';
+  $Code::Statistics::Collector::VERSION = '1.102520';
 }
 
 # ABSTRACT: collects statistics and dumps them to json
@@ -13,7 +13,7 @@ use 5.006_003;
 use Moose;
 use MooseX::HasDefaults::RO;
 use Code::Statistics::MooseTypes;
-use Code::Statistics::SlurpyConstructor;
+use MooseX::SlurpyConstructor 1.1;
 use Code::Statistics::Metric;
 use Code::Statistics::Target;
 
@@ -132,7 +132,7 @@ sub _measurements_as_json {
         ignored_files => \@ignored_files
     };
 
-    my $json = to_json( $measurements, { pretty => 1 } );
+    my $json = to_json( $measurements, { pretty => 1, canonical => 1 } );
 
     return $json;
 }
@@ -187,7 +187,7 @@ Code::Statistics::Collector - collects statistics and dumps them to json
 
 =head1 VERSION
 
-version 1.102390
+version 1.102520
 
 =head2 collect
     Locates files to collect statistics on, collects them and dumps them to
