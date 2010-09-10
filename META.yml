@@ -52,7 +52,7 @@ requires:
   perl: 5.006_003
 resources:
   repository: http://github.com/wchristian/code-statistics.git
-version: 1.102521
+version: 1.102530
 x_Dist_Zilla:
   plugins:
     -
