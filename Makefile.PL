@@ -18,16 +18,16 @@ my %WriteMakefileArgs = (
     'Test::Differences' => '0',
     'Test::MockObject' => '0',
     'Test::More' => '0',
-    'Test::Perl::Critic::Progressive' => '0',
     'Test::Simple' => '0.96',
-    'Try::Tiny' => '0',
     'parent' => '0'
   },
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.31'
   },
   'DISTNAME' => 'Code-Statistics',
-  'EXE_FILES' => [],
+  'EXE_FILES' => [
+    'bin/codestat'
+  ],
   'LICENSE' => 'unrestricted',
   'NAME' => 'Code::Statistics',
   'PREREQ_PM' => {
@@ -55,7 +55,7 @@ my %WriteMakefileArgs = (
     'Template' => '0',
     'Term::ProgressBar::Simple' => '0'
   },
-  'VERSION' => '1.102530',
+  'VERSION' => '1.103260',
   'test' => {
     'TESTS' => 't/*.t'
   }

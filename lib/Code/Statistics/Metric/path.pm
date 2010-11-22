@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Metric::path;
 BEGIN {
-  $Code::Statistics::Metric::path::VERSION = '1.102530';
+  $Code::Statistics::Metric::path::VERSION = '1.103260';
 }
 
 # ABSTRACT: measures the starting column of a target
@@ -34,7 +34,7 @@ Code::Statistics::Metric::path - measures the starting column of a target
 
 =head1 VERSION
 
-version 1.102530
+version 1.103260
 
 =head2 incompatible_with
     Returns true if the given target is explicitly not supported by this metric.

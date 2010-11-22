@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::App::Command::report;
 BEGIN {
-  $Code::Statistics::App::Command::report::VERSION = '1.102530';
+  $Code::Statistics::App::Command::report::VERSION = '1.103260';
 }
 
 # ABSTRACT: the shell command handler for stat reporting
@@ -37,7 +37,7 @@ Code::Statistics::App::Command::report - the shell command handler for stat repo
 
 =head1 VERSION
 
-version 1.102530
+version 1.103260
 
 =head1 AUTHOR
 

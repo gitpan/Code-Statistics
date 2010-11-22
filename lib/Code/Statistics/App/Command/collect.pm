@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::App::Command::collect;
 BEGIN {
-  $Code::Statistics::App::Command::collect::VERSION = '1.102530';
+  $Code::Statistics::App::Command::collect::VERSION = '1.103260';
 }
 
 # ABSTRACT: the shell command handler for stat collection
@@ -42,7 +42,7 @@ Code::Statistics::App::Command::collect - the shell command handler for stat col
 
 =head1 VERSION
 
-version 1.102530
+version 1.103260
 
 =head1 AUTHOR
 

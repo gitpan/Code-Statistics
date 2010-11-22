@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics::Metric::ccomp;
 BEGIN {
-  $Code::Statistics::Metric::ccomp::VERSION = '1.102530';
+  $Code::Statistics::Metric::ccomp::VERSION = '1.103260';
 }
 
 # ABSTRACT: measures the cyclomatic complexity of a target
@@ -33,7 +33,7 @@ Code::Statistics::Metric::ccomp - measures the cyclomatic complexity of a target
 
 =head1 VERSION
 
-version 1.102530
+version 1.103260
 
 =head2 measure
     Returns the cyclomatic complexity of the given target.

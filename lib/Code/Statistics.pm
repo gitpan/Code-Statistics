@@ -3,7 +3,7 @@ use warnings;
 
 package Code::Statistics;
 BEGIN {
-  $Code::Statistics::VERSION = '1.102530';
+  $Code::Statistics::VERSION = '1.103260';
 }
 
 # ABSTRACT: collects and reports statistics on perl code
@@ -54,7 +54,7 @@ Code::Statistics - collects and reports statistics on perl code
 
 =head1 VERSION
 
-version 1.102530
+version 1.103260
 
 =head1 SYNOPSIS
 

@@ -33,7 +33,6 @@ lib/Code/Statistics/Target/Block.pm
 lib/Code/Statistics/Target/RootDocument.pm
 lib/Code/Statistics/Target/Sub.pm
 lib/Code/Statistics/Target/nop.pm
-t/author-critic_progressive.t
 t/class_tests.t
 t/data/config/codestatrc
 t/data/config/globalcodestatrc
