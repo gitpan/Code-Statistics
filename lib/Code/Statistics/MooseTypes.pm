@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package Code::Statistics::MooseTypes;
-BEGIN {
-  $Code::Statistics::MooseTypes::VERSION = '1.103260';
+{
+  $Code::Statistics::MooseTypes::VERSION = '1.112980';
 }
 
 # ABSTRACT: provides coercion types for Code::Statistics
@@ -27,7 +27,7 @@ Code::Statistics::MooseTypes - provides coercion types for Code::Statistics
 
 =head1 VERSION
 
-version 1.103260
+version 1.112980
 
 =head1 AUTHOR
 

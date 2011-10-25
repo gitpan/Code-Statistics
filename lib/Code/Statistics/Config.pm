@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package Code::Statistics::Config;
-BEGIN {
-  $Code::Statistics::Config::VERSION = '1.103260';
+{
+  $Code::Statistics::Config::VERSION = '1.112980';
 }
 
 # ABSTRACT: merges configuration options from various sources
@@ -88,7 +88,7 @@ Code::Statistics::Config - merges configuration options from various sources
 
 =head1 VERSION
 
-version 1.103260
+version 1.112980
 
 =head2 assemble
     Builds the command-related configuration hash. The hash contains all config

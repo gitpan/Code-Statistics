@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package Code::Statistics::Metric::lines;
-BEGIN {
-  $Code::Statistics::Metric::lines::VERSION = '1.103260';
+{
+  $Code::Statistics::Metric::lines::VERSION = '1.112980';
 }
 
 # ABSTRACT: measures the line count of a target
@@ -29,7 +29,7 @@ Code::Statistics::Metric::lines - measures the line count of a target
 
 =head1 VERSION
 
-version 1.103260
+version 1.112980
 
 =head2 measure
     Returns the line count of the given target.

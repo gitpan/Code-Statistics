@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package Code::Statistics;
-BEGIN {
-  $Code::Statistics::VERSION = '1.103260';
+{
+  $Code::Statistics::VERSION = '1.112980';
 }
 
 # ABSTRACT: collects and reports statistics on perl code
@@ -21,6 +21,7 @@ use MooseX::SlurpyConstructor 1.1;
 has config_args => (
     is      => 'ro',
     slurpy  => 1,
+    default => sub { {} },
 );
 
 sub _command_config {
@@ -54,7 +55,7 @@ Code::Statistics - collects and reports statistics on perl code
 
 =head1 VERSION
 
-version 1.103260
+version 1.112980
 
 =head1 SYNOPSIS
 

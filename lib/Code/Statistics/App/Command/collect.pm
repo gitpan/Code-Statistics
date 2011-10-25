@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package Code::Statistics::App::Command::collect;
-BEGIN {
-  $Code::Statistics::App::Command::collect::VERSION = '1.103260';
+{
+  $Code::Statistics::App::Command::collect::VERSION = '1.112980';
 }
 
 # ABSTRACT: the shell command handler for stat collection
@@ -42,7 +42,7 @@ Code::Statistics::App::Command::collect - the shell command handler for stat col
 
 =head1 VERSION
 
-version 1.103260
+version 1.112980
 
 =head1 AUTHOR
 

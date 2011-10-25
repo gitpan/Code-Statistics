@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package Code::Statistics::Metric::path;
-BEGIN {
-  $Code::Statistics::Metric::path::VERSION = '1.103260';
+{
+  $Code::Statistics::Metric::path::VERSION = '1.112980';
 }
 
 # ABSTRACT: measures the starting column of a target
@@ -34,7 +34,7 @@ Code::Statistics::Metric::path - measures the starting column of a target
 
 =head1 VERSION
 
-version 1.103260
+version 1.112980
 
 =head2 incompatible_with
     Returns true if the given target is explicitly not supported by this metric.

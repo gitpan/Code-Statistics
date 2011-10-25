@@ -3,8 +3,8 @@ use strict;
 use warnings;
 
 package codestat;
-BEGIN {
-  $codestat::VERSION = '1.103260';
+{
+  $codestat::VERSION = '1.112980';
 }
 
 # ABSTRACT: gather code statistics on the command line
@@ -25,7 +25,7 @@ codestat - gather code statistics on the command line
 
 =head1 VERSION
 
-version 1.103260
+version 1.112980
 
 =head1 DESCRIPTION
 

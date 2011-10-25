@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package Code::Statistics::Target::Sub;
-BEGIN {
-  $Code::Statistics::Target::Sub::VERSION = '1.103260';
+{
+  $Code::Statistics::Target::Sub::VERSION = '1.112980';
 }
 
 # ABSTRACT: represents a sub in perl code
@@ -28,7 +28,7 @@ Code::Statistics::Target::Sub - represents a sub in perl code
 
 =head1 VERSION
 
-version 1.103260
+version 1.112980
 
 =head2 find_targets
     Returns all PPI::Structure::Block elements found in the given file.

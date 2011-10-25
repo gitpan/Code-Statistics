@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package Code::Statistics::Collector;
-BEGIN {
-  $Code::Statistics::Collector::VERSION = '1.103260';
+{
+  $Code::Statistics::Collector::VERSION = '1.112980';
 }
 
 # ABSTRACT: collects statistics and dumps them to json
@@ -65,6 +65,7 @@ has progress_bar => (
 has command_args => (
     is      => 'ro',
     slurpy  => 1,
+    default => sub { {} },
 );
 
 
@@ -187,7 +188,7 @@ Code::Statistics::Collector - collects statistics and dumps them to json
 
 =head1 VERSION
 
-version 1.103260
+version 1.112980
 
 =head2 collect
     Locates files to collect statistics on, collects them and dumps them to
